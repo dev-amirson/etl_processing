@@ -64,7 +64,7 @@ export function storeOutputs(outputs: EventObject[], directory: string, maxSize:
   let currentBatch: EventObject[] = [];
 
   const writeBatch = () => {
-    const outputFilename = `output-${new Date().toISOString()}.json`;
+    const outputFilename = `output-${Date.now()}.json`;
     const outputPath = path.join(directory, outputFilename);
 
     const json = JSON.stringify(currentBatch);
